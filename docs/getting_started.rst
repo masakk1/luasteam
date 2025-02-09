@@ -10,7 +10,9 @@ To install luasteam, you can use one of our pre-compiled binaries in our `releas
 Download the correct binary for your platform and rename it to simply ``luasteam.ext``. For example, if you're using Windows 32-bits, download ``win32_luasteam.dll`` and rename it to ``luasteam.dll``.
 Then copy this file to the same directory as your lua files, and make sure ``require 'luasteam'`` works.
 
-On linux, you may need to use `LD_LIBRARY_PATH=. love ...` when running your code. To make allow placing the binaries next to the love file on all OSs, you may need to use `this hack <https://github.com/MarvellousSoft/MarvInc/blob/e914dcd15d7b538793c7dcac27d3350d716d47db/marv/main.lua#L10-L13>`_.
+On linux, you may need to specify the path to your shared ojects (``.so`` files). Use ``LD_LIBRARY_PATH=.`` to assign the current working directory as the path to search for shared ojects, then run ``love .`` normally. To avoid having to set the enviroment variable every time, add it to your ``./bashrc`` config file for your preferred terminal. eg: ``export LD_LIBRARY_PATH="."``.
+
+To make allow placing the binaries next to the love file on all OSs, you may need to use `this hack <https://github.com/MarvellousSoft/MarvInc/blob/e914dcd15d7b538793c7dcac27d3350d716d47db/marv/main.lua#L10-L13>`_.
 
 .. warning::
 
